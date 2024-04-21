@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Predict Sleep Quality</title>
+		<style>
+			body {
+				font-family: sans-serif;
+				margin: 0;
+				padding: 20px;
+				font-size: 16px;
+			}
+
+			h1 {
+				text-align: center;
+				margin-bottom: 20px;
+			}
+
+			form {
+				max-width: 500px;
+				margin: 0 auto;
+				padding: 20px;
+			}
+
+			label {
+				display: block;
+				margin-bottom: 5px;
+			}
+
+			input[type="number"],
+			select {
+				width: 100%;
+				padding: 10px; /* Add padding to the input fields */
+				margin-bottom: 15px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+				font-size: 16px;
+				font-family: sans-serif;
+			}
+
+			input,
+			button {
+				font-size: 16px;
+				font-family: sans-serif;
+			}
+
+			button.submit-btn {
+				width: 100%;
+				padding: 10px;
+				background-color: #4caf50;
+				color: white;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+
+			button.submit-btn:hover {
+				background-color: #45a049;
+			}
+
+			h2 {
+				text-align: center;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Predict Sleep Quality</h1>
+		<form method="POST">
+			<label for="gender">Gender:</label>
+			<select name="gender" id="gender">
+				<option value="Male">Male</option>
+				<option value="Female">Female</option></select
+			><br /><br />
+
+			<label for="age">Age:</label>
+			<input type="number" name="age" id="age" /><br /><br />
+
+			<label for="sleep_duration">Sleep Duration (hours):</label>
+			<input
+				type="number"
+				name="sleep_duration"
+				id="sleep_duration"
+				step="0.1"
+			/><br /><br />
+
+			<label for="physical_activity"
+				>Physical Activity Level (minutes/day):</label
+			>
+			<input
+				type="number"
+				name="physical_activity"
+				id="physical_activity"
+				step="1"
+			/><br /><br />
+
+			<label for="stress_level">Stress Level:</label>
+			<input
+				type="number"
+				name="stress_level"
+				id="stress_level"
+				min="0"
+				max="10"
+			/><br /><br />
+
+			<label for="bmi_category">BMI Category:</label>
+			<select name="bmi_category" id="bmi_category">
+				<option value="Underweight">Underweight</option>
+				<option value="Normal">Normal</option>
+				<option value="Overweight">Overweight</option>
+				<option value="Obese">Obese</option></select
+			><br /><br />
+
+			<label for="systolic_bp">Systolic Blood Pressure:</label>
+			<input
+				type="number"
+				name="systolic_bp"
+				id="systolic_bp"
+				step="1"
+			/><br /><br />
+
+			<label for="diastolic_bp">Diastolic Blood Pressure:</label>
+			<input
+				type="number"
+				name="diastolic_bp"
+				id="diastolic_bp"
+				step="1"
+			/><br /><br />
+
+			<label for="heart_rate">Heart Rate (bpm):</label>
+			<input
+				type="number"
+				name="heart_rate"
+				id="heart_rate"
+			/><br /><br />
+
+			<label for="daily_steps">Daily Steps:</label>
+			<input
+				type="number"
+				name="daily_steps"
+				id="daily_steps"
+			/><br /><br />
+
+			<label for="sleep_disorder">Sleep Disorder:</label>
+			<select name="sleep_disorder" id="sleep_disorder">
+				<option value="None">None</option>
+				<option value="Insomnia">Insomnia</option>
+				<option value="Sleep Apnea">Sleep Apnea</option></select
+			><br /><br />
+
+			<button type="submit" class="submit-btn">Predict</button>
+		</form>
+		{% if sleep_quality is not none %}
+		<h2>Predicted Sleep Quality: {{ sleep_quality }}</h2>
+		{% endif %}
+	</body>
+</html>
