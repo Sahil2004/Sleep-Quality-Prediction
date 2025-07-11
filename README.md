@@ -34,7 +34,7 @@ It listens to the `GET` and `POST` requests at the `\` and serves the HTML templ
 
 # Hosting
 
-The current version of the App can be found at: https://sahilgarg.pythonanywhere.com/. If you find any bug or any issue, please make an issue on github or send a message at: sahil@cryonics.net.in. Thanks!
+The current version of the App can be found at: https://sahilgarg.pythonanywhere.com/. If you find any bug or any issue, please make an issue on github or send a message at: me.sahil.gg@gmail.com. Thanks!
 
 # Contribution
 
